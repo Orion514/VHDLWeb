@@ -19,4 +19,18 @@ module.exports = {
       }),
     ],
   },
+  devServer: {
+    host: '127.0.0.1',
+    https: false,
+    port: 5555,
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:5000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api'
+        }
+      }
+    }
+  }
 };

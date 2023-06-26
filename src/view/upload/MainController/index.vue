@@ -10,6 +10,9 @@
       <next-step-btn class="right-button" to="/upload/sub">Next Step</next-step-btn>
     </div>
 
+
+<!--    <el-button type="primary" @click="handleTest">测试</el-button>-->
+
   </div>
 
 </template>
@@ -19,10 +22,25 @@ import UploadFile from "@/components/uploadFile/uploadFile.vue";
 import VhdlEditor from "@/components/vhdlEditor/index.vue";
 import NextStepBtn from "@/components/nextStepBtn/index.vue";
 import BackBtn from "@/components/backBtn/index.vue";
+import {test} from "@/api/test.js"
+// import {ElMessage} from "element-plus";
 
 export default {
   name: "MainController",
   components: {BackBtn, NextStepBtn, VhdlEditor, UploadFile},
+  setup() {
+    const handleTest = () => {
+      ElMessage.success("触发")
+      test().then(res =>{
+        console.log(res)
+      })
+    }
+
+    return{
+      handleTest,
+      test
+    }
+  }
 }
 </script>
 

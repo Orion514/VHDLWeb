@@ -32,14 +32,14 @@
         </ul>
       </li>
 
-<!--      <li class="process-item">-->
-<!--        <a class="process-link" href="#Step3" title="Step3">Step 3:Assemble Total System</a>-->
-<!--        <ul>-->
-<!--          <li class="is-process-item">-->
-<!--            <a class="process-link" href="#Assemble Total System" title="Assemble Total System">&nbsp;3 Assemble Total System</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </li>-->
+      <li class="process-item">
+        <a class="process-link" href="#Step3" title="Step3">Step 3:Assemble Total System</a>
+        <ul>
+          <li class="is-process-item">
+            <a class="process-link" href="#Assemble Total System" title="Assemble Total System">&nbsp;3 Assemble Total System</a>
+          </li>
+        </ul>
+      </li>
 
     </ul>
   </div>

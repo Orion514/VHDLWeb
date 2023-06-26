@@ -23,10 +23,10 @@
       <el-menu-item index="/generate/main">Generate Main Controller</el-menu-item>
       <el-menu-item index="/generate/sub">Generate Sub Controller</el-menu-item>
     </el-sub-menu>
-<!--    <el-menu-item index="3" style="border: 0px">Assemble Total System</el-menu-item>-->
+    <el-menu-item index="/assemble" style="border: 0px">Assemble Total System</el-menu-item>
     <el-menu-item index="4" style="border: 0px">Download</el-menu-item>
     <el-menu-item index="/help" >Help</el-menu-item>
-<!--    <el-menu-item index="6" style="border: 0px">Login</el-menu-item>-->
+    <!--    <el-menu-item index="6" style="border: 0px">Login</el-menu-item>-->
   </el-menu>
 
 </template>
