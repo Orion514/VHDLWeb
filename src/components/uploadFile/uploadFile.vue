@@ -4,7 +4,7 @@
         class="upload-demo"
         drag
         action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-        accept=".txt,.tcl"
+        accept=".txt"
         :auto-upload="true"
         :http-request="uploadFile"
     >
@@ -14,7 +14,7 @@
       </div>
       <template #tip>
         <div class="el-upload__tip">
-          Only .txt .tcl files need
+          Only .txt files need
         </div>
       </template>
     </el-upload>
@@ -25,21 +25,29 @@
 <script>
 
 
-import {ElMessage} from "element-plus";
 import {uploadSpecification} from "@/api/upload.js"
+import {UploadFilled} from "@element-plus/icons-vue";
 
 export default {
+  components:{
+    UploadFilled
+  },
   methods:{
     uploadFile(file){
       ElMessage.info("开始上传")
       const formData = new FormData();
+
       formData.append('file',file.file);
 
-      console.log(formData)
-
       uploadSpecification(formData).then(res=>{
-        ElMessage.success('成功')
-        console.log(res)
+        const store = this.$store;
+        store.commit('app/setComputervhdl',res.data.computervhdl);
+        ElMessage.success('上传成功')
+        const s = store.state.app.computervhdl;
+        console.log(s)
+      }).catch(error =>{
+        console.log(error)
+        ElMessage.error('上传失败')
       })
     }
   }
