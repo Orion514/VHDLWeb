@@ -20,6 +20,9 @@
 export default {
   name: "vhdlEditor",
   components: {Codemirror},
+  props:{
+    code : String
+  },
   data() {
       return{
         code: 'library IEEE;\n' +

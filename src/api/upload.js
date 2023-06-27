@@ -9,3 +9,11 @@ export function uploadSpecification(data){
         data
     })
 }
+
+export function complete_computer(data){
+    return request({
+        url: '/complete_computer',
+        method: 'post',
+        data
+    })
+}
