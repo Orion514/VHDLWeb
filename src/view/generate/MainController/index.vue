@@ -13,17 +13,17 @@
     <!-- <vhdl-editor >1111</vhdl-editor> -->
     <el-select v-model="code" placeholder="请选择">
       <el-option
-        v-for="item in files"
-        :key="item.filename"
-        :label="item.filename"
-        :value="item.txt">
+          v-for="item in files"
+          :key="item.filename"
+          :label="item.filename"
+          :value="item.txt">
       </el-option>
     </el-select>
     <Codemirror
-      ref="cm"
-      :options="cmOptions"
-      :value = "code"
-      @input="inputChange"
+        ref="cm"
+        :options="cmOptions"
+        :value = "code"
+        @input="inputChange"
     >
     </Codemirror>
     <el-button style="" @click="completeComputer">更新</el-button>
@@ -52,12 +52,12 @@ export default {
       },
       files:[],
       cmOptions: {
-          mode: 'text/x-vhdl',
-          line: true,
-          lineNumbers: true,
-          lineWrapping: true,
-          tabSize: 4,
-        }
+        mode: 'text/x-vhdl',
+        line: true,
+        lineNumbers: true,
+        lineWrapping: true,
+        tabSize: 4,
+      }
     }
   },
   created(){
@@ -65,29 +65,29 @@ export default {
     console.log(this.files)
   },
   methods: {
-      inputChange(content) {
-        this.code = content;
-        this.$nextTick(() => {
-          console.log("code:" + this.code);
-          console.log("content:" + content)
-        });
-      },
-      completeComputer(){
-          this.nowFile.txt = this.code;
-          var _that = this;
-          this.files.forEach(function(element,index,array){
-            if(element.txt == _that.code){
-              _that.nowFile.filename = element.filename;
-            }
-          })
-          console.log("补全：")
-          console.log(this.nowFile)
-          complete_computer(this.nowFile).then(response => {
-            var mes = response.data.message;
-            ElMessage.success(mes)
-          })
-      }
+    inputChange(content) {
+      this.code = content;
+      this.$nextTick(() => {
+        console.log("code:" + this.code);
+        console.log("content:" + content)
+      });
+    },
+    completeComputer(){
+      this.nowFile.txt = this.code;
+      var _that = this;
+      this.files.forEach(function(element,index,array){
+        if(element.txt == _that.code){
+          _that.nowFile.filename = element.filename;
+        }
+      })
+      console.log("补全：")
+      console.log(this.nowFile)
+      complete_computer(this.nowFile).then(response => {
+        var mes = response.data.message;
+        ElMessage.success(mes)
+      })
     }
+  }
 }
 </script>
 

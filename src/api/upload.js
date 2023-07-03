@@ -17,3 +17,11 @@ export function complete_computer(data){
         data
     })
 }
+
+export function atomtest(data){
+    return request({
+        url: '/atomtest',
+        method: 'post',
+        data
+    })
+}

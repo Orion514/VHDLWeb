@@ -42,9 +42,12 @@ export default {
       uploadSpecification(formData).then(res=>{
         const store = this.$store;
         store.commit('app/setComputervhdl',res.data.computervhdl);
+        store.commit('app/setTbtestdict',res.data.tbtestdict);
         ElMessage.success('上传成功')
         const s = store.state.app.computervhdl;
+        const b = store.state.app.tbtestdict;
         console.log(s)
+        console.log(b)
       }).catch(error =>{
         console.log(error)
         ElMessage.error('上传失败')

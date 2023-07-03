@@ -28,6 +28,11 @@ const routes = [
                 component: () => import('../view/generate/MainController')
             },
             {
+                path: '/generate/atom',
+                name: '/generate/atom',
+                component: () => import('../view/generate/Atom')
+            },
+            {
                 path: '/generate/sub',
                 name: '/generate/sub',
                 component: () => import('../view/generate/SubController')
